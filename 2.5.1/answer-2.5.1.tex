@@ -1,0 +1,31 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[english,russian]{babel}
+\usepackage[left=2cm, top=2cm, right=2cm, bottom=2.5cm]{geometry}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage[tableposition=top,singlelinecheck=false]{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tabularx}
+
+\begin{document}
+    \begin{enumerate}
+        \item $\Delta p = \sigma\left(\frac{1}{a} +\frac{1}{b}\right)$, $a$ и $b$~--- длины полуосей сечения
+        (пузырек будет иметь форму эллипсоида вращания сечения капилляра вокруг меньшего диаметра)
+        \item \[2\pi r \sigma = \pi r^2 \rho g h\]
+        \[h = \frac{2\sigma}{rg\rho}\approx 3\,\text{см}\]
+        \item Опускаю иглу так, чтобы она касалась поверхности воды. Верхний конец иглы
+        открыт в атмосферу. Воздух над поверхностью воды немного разрежается.
+        Атмосфера начинает выдавливать пузырек. Сначала он становится полусферой с радиусом иглы.
+        При дальнейшем расширении он отделяется из-за ограниченности пленки у иглы. Перепад
+        давления равен $\Delta p = \frac{2\sigma}{r}$, откуда нахожу радиус иглы (измеряя перепад давлений и зная из таблицы $\sigma$ спирта).
+        \item Погрешность измерения диаметра микроскопом ($\varepsilon\approx 0{,}03$)
+        \item При критической температуре $\sigma=0$, $T_\text{кр}=T + \sigma / k = 700\pm 10\,\text{К}$,
+        $T$~--- некоторая точка с графика, $\sigma$~--- поверхностное натяжение при этой температуре,
+        $k$~--- наклон графика $\sigma(T)$
+    \end{enumerate}
+\end{document}

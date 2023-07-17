@@ -1,0 +1,277 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[english,russian]{babel}
+\usepackage[left=2cm, top=2cm, right=2cm, bottom=2.5cm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[tableposition=top,singlelinecheck=false]{caption}
+
+\title{Практическое измерение коэффициентов Джоуля-Томсона. Оценка параметров реального газа.}
+\author{Леонид Пилюгин, Б02-212}
+
+\begin{document}
+    \maketitle
+    \section{Общие замечания}
+    \begin{enumerate}
+        \item Эффект Дж-Т --- изменение температуры газа, медленно протекающего
+        из области высокого давления в область низкого в условиях хорошей
+        тепловой изоляции. Этот эффект не проявляется в идеальном газе.
+        \item В этом процессе газ испытывает боьшое трение о пористую перегородку,
+        что сильно искажает ход явления (можно подождать и температура установится и все будет точно)
+        \item Отличие реального газа от идеального в том, что учитывается потенциальная
+        энергия взаимодействия молекул, из-за которой газ охлаждается при расширении и наоборот
+        \item $\mu_{dt}=\frac{\Delta T}{\Delta P} = \frac{2a/RT-b}{C_p}$
+        \item $T_\text{кр}=304 K$, $T_\text{инв}=2050 K$
+        \item ниже $T_\text{инв}$ $\mu > 0$, выше~--- $\mu_{dt} < 0$
+        \item $\mu=0{,}044$, $C_p=40$
+        \item Температуры от комнатной до $350 K$
+    \end{enumerate}
+
+    \section{Параметры установки}
+    \begin{enumerate}
+        \item Газ пропускается через трубку с пористой перегородкой
+        \item Длина трубки $80$ мм
+        \item Диаметр трубки $3$ мм
+        \item Толщина стенок $0{,}2$ мм
+        \item Трубка плохо проводит тепло
+        \item Пористая перегородка в конце трубки и является стеклянной
+        пористой пробкой с большим числом узких пористых каналов
+        \item Толщина пробки $5$ мм
+        \item Перепад давлений около 4 атм, расход газа $10\,\text{см}^3/c$
+        \item Температура воды $T_\text{в}$ измеряется термометром
+        \item Требуемая температура воды усанавливается при помощи $T_\text{к}$
+        \item Давление газа измеряется манометром (измеряет перепад давлений) и регулируется вентилем
+        \item Разность температур мериется термопарой
+        \item Величина эффекта не превышает $5 K$ ($200\,\text{мкВ}$)
+        \item Измерения при комнатной температуре, 50 и 80 градусов
+        \item $a\approx0{,}3658\,\text{м}^6\cdot\text{Па}/\text{моль}^2$
+        \item $b\approx4{,}29\cdot 10^{-5}\,\text{м}^3/\text{моль}$
+        \item График $\Delta T (\Delta P)$
+    \end{enumerate}
+
+    \newpage ~ \newpage
+    \section{Данные с  самореза}
+    \begin{enumerate}
+        \item Баранов
+        $$a_{17-25}=0{,}78\pm 0{,}09$$
+        $$a_{35-50}=1{,}36\pm 0{,}16$$
+        $$b_{17-25}=9{,}18\pm 0{,}92\cdot 10^{-5}$$
+        $$b_{35-50}=21{,}0\pm 2{,}0\cdot 10^{-5}$$
+        $$T_{17-25}=2045$$
+        $$T_{35-50}=1559$$
+        \item Малиновский
+        $$a=1{,}2\pm 0{,}2$$
+        $$b=0{,}43\cdot 10^{-4}$$
+        $$T=440\pm90$$
+        \item Панферов
+        $$a_{22-45}=0{,}47\pm 0{,}04$$
+        $$a_{45-60}=1{,}8\pm 0{,}1$$
+        $$b_{22-45}=82\pm5\cdot 10^{-6}$$
+        $$b_{45-60}=420\pm30\cdot 10^{-6}$$
+        $$T_{22-45}=1400\pm 20$$
+        $$T_{22-45}=1100\pm 20$$
+        \item Сенокосов
+        $$a_{20-30}=1{,}3\pm 0{,}55$$
+        $$a_{30-50}=1{,}31\pm 0{,}32$$
+        $$b_{20-30}=638\pm442\cdot 10^{-6}$$
+        $$b_{45-60}=654\pm246\cdot 10^{-6}$$
+        $$T_{20-30}=489\pm 396$$
+        $$T_{30-50}=485\pm 219$$
+        \item Терехов
+        $$a=1{,}3\pm 0{,}04$$
+        $$b=6{,}4\pm 0{,}2\cdot 10^{-4}$$
+        $$T=487\pm 22$$
+        \item Валеев
+        $$a=1{,}095\pm 1{,}225$$
+        $$b=568\pm 899\cdot 10^{-6}$$
+        $$T=2309$$
+    \end{enumerate}
+
+\newpage ~ \newpage
+    \begin{enumerate}
+        \item Баранов
+        \begin{table}[ht!]
+            \begin{tabular}{|c|c||c|c|}
+            \hline
+            \multicolumn{2}{|c||}{$T = 17 ^\circ C$} & \multicolumn{2}{|c|}{$T = 25,2 ^\circ C$} \\ \hline
+            $\Delta p$, бар & $\Delta U$, мкВ & $\Delta p$, бар & $\Delta U$, мкВ \\ \hline
+            4,05 & 148 & 4,05 & 150 \\ \hline
+            3,75 & 130 & 3,8  & 128 \\ \hline
+            3,5  & 120 & 3,35 & 110 \\ \hline
+            3,0  & 100 & 2,85 & 89 \\ \hline
+            2,55 & 80  & 2,15 & 64 \\ \hline \hline
+            \multicolumn{2}{|c||}{$T = 35 ^\circ C$} & \multicolumn{2}{|c|}{$T = 50 ^\circ C$} \\ \hline 
+            $\Delta p$, бар & $\Delta U$, мкВ & $\Delta p$, бар & $\Delta U$, мкВ \\ \hline
+            4   & 135 & 4,1 & 127 \\ \hline
+            3,3 & 98  & 3,5 & 97 \\ \hline
+            2,9 & 80  & 2,9 & 74 \\ \hline
+            2,4 & 60  & 2,3 & 53 \\ \hline
+            \label{results}
+            \end{tabular}
+            \caption {Результаты показаний вольтметра в зависимости от разности давления}
+        \end{table}
+
+        $\sigma_p=0,1$ бар и 
+        $\sigma_U=2$ мкВ.
+        \begin{center}
+            $\displaystyle \mu_{17} = 1.13 \pm 0.04\  K/$бар, $\displaystyle \sigma_{\mu} = 3\%$;\break
+            $\displaystyle \mu_{25} = 1.07 \pm 0.07\  K/$бар, $\displaystyle \sigma_{\mu} = 7\%$;\break
+            $\displaystyle \mu_{35} = 1.13 \pm 0.04\  K/$бар, $\displaystyle \sigma_{\mu} = 3\%$;\break
+            $\displaystyle \mu_{50} = 0.96 \pm 0.04\  K/$бар, $\displaystyle \sigma_{\mu} = 4\%$.\break
+        \end{center}
+
+    \item Малиновский
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        $T, \text{К}$&$dV/dP, \mu\text{В}/\text{бар}$&$dV/dT, \mu\text{В}/\text{К}$&$\mu = dT/dP, \text{К}/\text{бар}$&$1000\text{К}/T$\\
+        \hline
+        $293.90\pm0.05$&$40.80\pm0.89$&$40.25\pm0.45$&$1.01\pm0.03$&$3.4025\pm0.0005$\\ \hline
+        $302.75\pm0.07$&$39.40\pm0.53$&$41.15\pm0.45$&$0.96\pm0.02$&$3.3031\pm0.0007$\\ \hline
+        $313.20\pm0.01$&$39.20\pm1.35$&$42.05\pm0.45$&$0.93\pm0.04$&$3.1929\pm0.0001$\\ \hline
+        $323.17\pm0.01$&$31.80\pm1.06$&$42.90\pm0.40$&$0.74\pm0.03$&$3.0943\pm0.0001$\\ \hline
+        $333.16\pm0.01$&$29.40\pm1.21$&$43.70\pm0.40$&$0.67\pm0.03$&$3.0016\pm0.0001$\\ \hline
+        \end{tabular}
+        \end{center}
+
+    \item Панферов
+    \item Сенокосов
+    \begin{table}[ht!]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            \multicolumn{6}{|c|}{$ T = 20 \text{ } ^\circ C $} \\ \hline
+            $ \Delta P $, атм & $ \sigma_p $, атм & $ U $, мВ & $ \sigma_U $, мВ & $ \Delta T $, K & $ \sigma_{\Delta T} $, K \\ \hline
+            4,00 & 0,05 & 0,156 & 0,001 & 4,05 & 0,02 \\ \hline
+            3,50 & 0,05 & 0,132 & 0,001 & 3,46 & 0,02 \\ \hline
+            3,00 & 0,05 & 0,108 & 0,001 & 2,86 & 0,02 \\ \hline
+            2,50 & 0,05 & 0,088 & 0,001 & 2,36 & 0,02 \\ \hline
+            2,00 & 0,05 & 0,066 & 0,001 & 1,82 & 0,02 \\ \hline
+            1,50 & 0,05 & 0,045 & 0,001 & 1,29 & 0,02 \\ \hline
+            1,00 & 0,05 & 0,026 & 0,001 & 0,82 & 0,02 \\ \hline
+            0,50 & 0,05 & 0,008 & 0,001 & 0,37 & 0,02 \\ \hline
+        \end{tabular}
+        \caption{Экспериментальные данные для 20 $^\circ$C}
+        \label{tab:20C}
+    \end{table}
+    
+    \begin{table}[ht!]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            \multicolumn{6}{|c|}{$ T = 30 \text{ } ^\circ C $} \\ \hline
+            $ \Delta P $, атм & $ \sigma_p $, атм & $ U $, мВ & $ \sigma_U $, мВ & $ \Delta T $, K & $ \sigma_{\Delta T} $, K \\ \hline
+            4,00 & 0,05 & 0,144 & 0,001 & 3,67 & 0,02 \\ \hline
+            3,50 & 0,05 & 0,123 & 0,001 & 3,16 & 0,02 \\ \hline
+            3,00 & 0,05 & 0,100 & 0,001 & 2,60 & 0,02 \\ \hline
+            2,50 & 0,05 & 0,080 & 0,001 & 2,12 & 0,02 \\ \hline
+            2,00 & 0,05 & 0,060 & 0,001 & 1,63 & 0,02 \\ \hline
+            1,50 & 0,05 & 0,040 & 0,001 & 1,14 & 0,02 \\ \hline
+            1,00 & 0,05 & 0,020 & 0,001 & 0,66 & 0,02 \\ \hline
+            0,50 & 0,05 & 0,008 & 0,001 & 0,36 & 0,02 \\ \hline
+        \end{tabular}
+        \caption{Экспериментальные данные для 30 $^\circ$C}
+        \label{tab:30C}
+    \end{table}
+    
+    \begin{table}[ht!]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            \multicolumn{6}{|c|}{$ T = 50 \text{ } ^\circ C $} \\ \hline
+            $ \Delta P $, атм & $ \sigma_p $, атм & $ U $, мВ & $ \sigma_U $, мВ & $ \Delta T $, K & $ \sigma_{\Delta T} $, K \\ \hline
+            4,00 & 0,05 & 0,127 & 0,001 & 3,12 & 0,02 \\ \hline
+            3,50 & 0,05 & 0,107 & 0,001 & 2,66 & 0,02 \\ \hline
+            3,00 & 0,05 & 0,088 & 0,001 & 2,21 & 0,02 \\ \hline
+            2,50 & 0,05 & 0,069 & 0,001 & 1,77 & 0,02 \\ \hline
+            2,00 & 0,05 & 0,051 & 0,001 & 1,35 & 0,02 \\ \hline
+            1,50 & 0,05 & 0,034 & 0,001 & 0,96 & 0,02 \\ \hline
+            1,00 & 0,05 & 0,019 & 0,001 & 0,61 & 0,02 \\ \hline
+            0,50 & 0,05 & 0,008 & 0,001 & 0,35 & 0,02 \\ \hline
+        \end{tabular}
+        \caption{Экспериментальные данные для 50 $^\circ$C}
+        \label{tab:50C}
+    \end{table}
+
+    \item Терехов
+    \begin{table}[ht!]
+
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|} \hline
+            $\Delta P,\ \text{атм}$ & 3.0 & 2.6 & 2.2 & 1.8 & 1.4 & 1.0 \\ \hline
+            $U-U_0,\ \text{мкВ}   $ & 138 & 120 & 102 & 85 & 68 & 55 \\ \hline
+            $\Delta T$, K   & 3.47 & 3.02 & 2.56 & 2.14 & 1.71 & 1.38 \\ \hline
+        \end{tabular}
+            \caption{T=291K}
+    \end{table}
+    \begin{table}[ht!]
+    
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|} \hline
+            $\Delta P,\ \text{атм}$ & 3.0 & 2.6 & 2.2 & 1.8 & 1.4 & 1.0 \\ \hline
+            $U-U_0$, мкВ    & 115 & 98 & 82 & 66 & 51 & 40 \\ \hline
+            $\Delta T$, K   & 2.76 & 2.36 & 1.97 & 1.59 & 1.23 & 0.96 \\ \hline
+        \end{tabular}
+            \caption{T=308K}
+    \end{table}
+    \begin{table}[ht!]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|} \hline
+            $\Delta P,\ \text{атм}$ & 3.0 & 2.6 & 2.2 & 1.8 & 1.4 & 1.0 \\ \hline
+            $U-U_0$, мкВ    & 91 & 80 & 68 & 55  & 41 & 28 \\ \hline
+            $\Delta T$, K   & 2.10 & 1.85 & 1.57 & 1.27 & 0.95 & 0.65 \\ \hline
+        \end{tabular}
+            \caption{T=333K}
+    \end{table}
+
+    \item Валеев
+    \begin{table}[ht!]
+    \begin{tabular}{|c|c|c|}
+        \hline
+        \multicolumn{3}{|c|}{294 $K$}                             \\ \hline
+        $\Delta P$, атм & $\Delta U$, мкВ & $\Delta T$, $^{0}K$ \\ \hline
+        0               & 0,000           & 0,000               \\ \hline
+        1,3             & 44,000          & 1,081               \\ \hline
+        1,8             & 63,000          & 1,548               \\ \hline
+        2,4             & 87,000          & 2,138               \\ \hline
+        2,7             & 101,000         & 2,482               \\ \hline
+        3,0             & 112,000         & 2,752               \\ \hline
+        3,4             & 131,000         & 3,219               \\ \hline
+        3,7             & 145,000         & 3,563               \\ \hline
+        4,0             & 160,000         & 3,931               \\ \hline
+        \end{tabular}
+    \end{table}
+    \begin{table}[ht!]
+        \begin{tabular}{|c|c|c|}
+        \hline
+        \multicolumn{3}{|c|}{328 $K$}                         \\ \hline
+        $\Delta P$, атм & $\Delta U$, мкВ & $\Delta T$, $^0K$ \\ \hline
+        0,0             & 0,000           & 0,000             \\ \hline
+        1,0             & 25,000          & 0,588             \\ \hline
+        1,5             & 38,000          & 0,894             \\ \hline
+        2,0             & 50,000          & 1,176             \\ \hline
+        2,5             & 63,000          & 1,482             \\ \hline
+        3,0             & 85,000          & 2,000             \\ \hline
+        3,5             & 102,000         & 2,400             \\ \hline
+        4,0             & 120,000         & 2,824             \\ \hline
+        \end{tabular}
+    \end{table}
+    \begin{table}[ht!]
+        \begin{tabular}{|c|c|c|}
+        \hline
+        \multicolumn{3}{|c|}{348 $K$}                           \\ \hline
+        $\Delta P$, атм & $\Delta U$, мкВ & $\Delta T$, $^{0}K$ \\ \hline
+        0,000           & 0,000           & 0,000               \\ \hline
+        1,000           & 13,000          & 0,295               \\ \hline
+        1,500           & 19,000          & 0,431               \\ \hline
+        2,000           & 28,000          & 0,635               \\ \hline
+        2,500           & 39,000          & 0,884               \\ \hline
+        3,000           & 48,000          & 1,088               \\ \hline
+        3,500           & 61,000          & 1,383               \\ \hline
+        4,000           & 77,000          & 1,746               \\ \hline
+        \end{tabular}
+    \end{table}
+\end{enumerate}
+    
+\end{document}

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+NAME=$1
+mkdir $NAME
+mkdir $NAME/img
+mkdir $NAME/data
+cp -r .hide/tex $NAME/tex
+mkdir $NAME/jupyter
+python .hide/create_notebook.py $NAME/jupyter/$NAME
+cp .hide/Makefile $NAME/Makefile

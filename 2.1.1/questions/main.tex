@@ -1,0 +1,44 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[english,russian]{babel}
+\usepackage[left=2cm, top=2cm, right=2cm, bottom=2.5cm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[tableposition=top,singlelinecheck=false]{caption}
+
+\title{Анализ данных, полученных при выполнении работы. Расчёт теплоёмкости воздуха и коэффициента теплоотдачи калориметра.}
+\author{Леонид Пилюгин, Б02-212}
+
+\begin{document}
+    \maketitle
+    \section{Общие замечания}
+    \begin{enumerate}
+        \item $q=\rho\frac{dV}{dT}$~--- объемный расход воздуха
+        \item $\rho=\frac{\mu p}{RT}\approx 1{,}2\,\text{кг}/\text{м}^3$
+        \item ЭДС термопары $\varepsilon=\beta\Delta T$, $\beta=40{,}7\,\text{мкВ}/\text{К}$
+        \item $N_\text{пот}=\alpha\Delta T$
+        \item $N=(c_pq+\alpha)\Delta T$ (При фиксированном расходе мощность и температура пропорциональны)
+        \item Сопротивление нагревателя около 35 Ом
+        \item $I_0=\sqrt{N_0/R_\text{Н}}$
+    \end{enumerate}
+    \section{Проведение измерений}
+    \begin{enumerate}
+        \item $I_{max}\approx2{,}5 I_0$
+        \item $\Delta T \propto N \propto  I^2$
+        \item Измерения для 4-5 точек $\Delta T$ от 2 до 10 градусов
+        \item Измерения для 2 разных расходов воздуха
+    \end{enumerate}
+    \section{Обработка}
+    \begin{enumerate}
+        \item Графики $\Delta T(N)$ для каждого расхода воздуха $q$
+        \item Проверьте, что выполняется предположение о том, что
+        тепловые потери пропорциональны разности температур,
+        аппрксимируя прямой $y=kx$ найти $k$ для каждого расхода
+        \item Проанализируйте зависимость $k(q)$ и использую формулу
+        $N=(c_pq+\alpha)\Delta T$, определите значение теплоемкости
+        воздуха при постоянном давлении ($c_p=2{,}5R/\mu\approx715\,\text{Дж}/\text{кг}$ или $2{,}5R=20{,}8$),
+        определите долю потерь $N_\text{пот}/N$ в опыте
+        \item Коэффициент теплоотдачи $\alpha$
+    \end{enumerate}
+\end{document}

@@ -1,0 +1,37 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[english,russian]{babel}
+\usepackage[left=2cm, top=2cm, right=2cm, bottom=2.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage[tableposition=top,singlelinecheck=false]{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tabularx}
+
+\defaultfontfeatures{Ligatures={TeX},Renderer=Basic} 
+\setmainfont[Ligatures={TeX,Historic}]{Times New Roman}
+\setsansfont{Arial}
+
+\setlist{nosep}
+
+\DeclareCaptionLabelFormat{gostfigure}{\textbf{Рисунок #2}}
+\DeclareCaptionLabelFormat{gosttable}{\textbf{Таблица #2}}
+\DeclareCaptionLabelSeparator{gost}{.\;}
+\captionsetup{labelsep=gost}
+\captionsetup*[figure]{labelformat=gostfigure}
+\captionsetup*[table]{labelformat=gosttable}
+\renewcommand{\thesubfigure}{\asbuk{subfigure}}
+
+\begin{document}
+    \input{titular.tex}
+    \input{annotation.tex}
+    \input{teory.tex}
+    \input{equipment.tex}
+    \input{data.tex}
+    %\input{conclusion.tex}
+\end{document}
