@@ -1,67 +1,116 @@
 import sys
-import nbformat
-from notebook import transutils as _
-from notebook.services.contents.filemanager import FileContentsManager as FCM
+import nbformat as nbf
 
-try:
-    notebook_fname = sys.argv[1].strip('.ipynb')
-except IndexError:
-    print("Usage: create-notebook <notebook>")
-    exit()
+nb = nbf.v4.new_notebook()
 
-notebook_fname += '.ipynb'  # ensure .ipynb suffix is added
-FCM().new(path=notebook_fname)
+nb["cells"] += [nbf.v4.new_markdown_cell(
+"""# Import""")]
 
-# read
-with open(notebook_fname) as f:
-    nb = nbformat.read(f, as_version=4)
-
-# add import cell
-nb["cells"] += [nbformat.v4.new_code_cell(
-"""import numpy as np
-import pandas as pd
+nb["cells"] += [nbf.v4.new_code_cell(
+"""import lab
+import lab.plot
+import lab.data
+import lab.mmath as mmath
+import lab.utils as utils
+import lab.arr as arr
+import lab.linfit as lf
+import lab.constants as const
+import lab.utils as utils
+from lab.unit import unit as u
+from uncertainties import ufloat
 import matplotlib.pyplot as plt
-plt.style.use("https://raw.githubusercontent.com/LeonidPilyugin/mpl-style/main/simple.mplstyle")
 print("Import done!")""")]
 
-# add polyfit cell
-nb["cells"] += [nbformat.v4.new_code_cell(
-"""def polyfit(x, y):
-    pp, V = np.polyfit(x, y, 1, cov=True)
-    k, b = pp
-    k_err, b_err = np.sqrt(V[0][0]), np.sqrt(V[1][1])
-    return k, b, k_err, b_err""")]
+nb["cells"] += [nbf.v4.new_markdown_cell(
+"""# Read data""")]
 
-# add read data cell
-nb["cells"] += [nbformat.v4.new_code_cell(
-"""data = pd.read_csv("../data/data.csv")
-data""")]
+nb["cells"] += [nbf.v4.new_code_cell(
+"""data = lab.data.Data("../data/data.csv")
+data.head(5)""")]
 
-# add plot cell
-nb["cells"] += [nbformat.v4.new_code_cell(
-"""# set data
-x = np.linspace(-5, 5, 10)
-y = x ** 2 * ((np.random.rand(10) - 0.5) * 0.1 + 1.0)
-x = x ** 2
+nb["cells"] += [nbf.v4.new_markdown_cell(
+"""# Texify primary data""")]
 
-# polyfit
-k, b, kerr, berr = polyfit(x, y)
-print(f"k = {k} +/- {kerr}\\nb = {b} +/- {berr}")
+nb["cells"] += [nbf.v4.new_code_cell(
+"""utils.totex(data)""")]
 
-# plot data
-plt.errorbar(x, y, xerr=0.0, yerr=0.0, fmt=".")
-plt.axline([min(x), min(x) * k + b], [max(x), max(x) * k + b], color="red")
-plt.xlabel("x")
-plt.ylabel("y")
-plt.title("Title")
-plt.savefig("../img/plot.png")""")]
+nb["cells"] += [nbf.v4.new_markdown_cell(
+"""# Add values""")]
 
-# add dump cell
-nb["cells"] += [nbformat.v4.new_code_cell(
-"""data.to_csv("../data/data.csv", index=False)""")]
+nb["cells"] += [nbf.v4.new_code_cell(
+"""r_hg = ufloat(13550, 1) * u.kg / u.m ** 3
+r_w = ufloat(1000, 1) * u.kg / u.m ** 3
+g = ufloat(9.8154, 1e-4) * u.m / u.s ** 2
+dh = ufloat(8.4, 0.0025) * u.cm
+r_hg, r_w, g, dh""")]
+
+
+nb["cells"] += [nbf.v4.new_markdown_cell(
+"""# Compute""")]
+
+nb["cells"] += [nbf.v4.new_code_cell(
+"""data["p"] = ((data["h1"] - data["h2"]) * r_hg * g - r_w * g * dh).ito(u.Pa)
+data["1/T"] = data["T"] ** -1
+data["lnp"] = mmath.log(data["p"].m)
+data.df.head(5)""")]
+
+nb["cells"] += [nbf.v4.new_markdown_cell(
+"""# Plot""")]
+
+nb["cells"] += [nbf.v4.new_code_cell(
+"""p1 = lab.plot.Plot(yl="$P$", xl="$T$")
+p1.plot(data["T"], data["p"], fmt=".")""")]
+
+nb["cells"] += [nbf.v4.new_code_cell(
+"""p2 = lab.plot.Plot(yl="$\\\\ln P$", xl="$1/T$")
+p2.plot(data["1/T"], data["lnp"], fmt=".")""")]
+
+nb["cells"] += [nbf.v4.new_markdown_cell(
+"""# Linear fit""")]
+
+nb["cells"] += [nbf.v4.new_code_cell(
+"""k1, b1 = lf.chi2(data["T"], data["p"])
+k2, b2 = lf.chi2(data["1/T"], data["lnp"])
+print(f"k1 = {k1}\\nk2 = {k2}")
+print(f"b1 = {b1}\\nb2 = {b2}")""")]
+
+nb["cells"] += [nbf.v4.new_markdown_cell(
+"""# Plot lines and save""")]
+
+nb["cells"] += [nbf.v4.new_code_cell(
+"""p1.line(k1, b1, color="black")
+p1.save("../img/plot1.png")""")]
+
+nb["cells"] += [nbf.v4.new_code_cell(
+"""p2.line(k2, b2, color="black")
+p2.save("../img/plot2.png")""")]
+
+nb["cells"] += [nbf.v4.new_markdown_cell(
+"""# Result""")]
+
+nb["cells"] += [nbf.v4.new_code_cell(
+"""L1 = const.R * data["T"].arr.mean() ** 2 / data["p"].arr.mean() * k1
+L2 = -const.R * k2
+print(f"L1 = {L1}\\nL2 = {L2}")""")]
+
+nb["cells"] += [nbf.v4.new_code_cell(
+"""utils.totex(L1)
+utils.totex(L2)""")]
+
+nb["cells"] += [nbf.v4.new_markdown_cell(
+"""# Texify intermediate data""")]
+
+nb["cells"] += [nbf.v4.new_code_cell(
+"""utils.totex(data, columns={
+    "T": "T",
+    "h1": "h_1",
+    "h2": "h_2",
+    "p": "P",
+    "1/T": "T^{-1}",
+    "lnp": "\ln P",
+})""")]
 
 # write notebook
-with open(notebook_fname, 'w', encoding='utf-8') as f:
-    nbformat.write(nb, f)
-
+with open(sys.argv[1] + ".ipynb", "w", encoding="utf-8") as f:
+    nbf.write(nb, f)
 

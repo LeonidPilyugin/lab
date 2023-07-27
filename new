@@ -6,5 +6,7 @@ mkdir $NAME/img
 mkdir $NAME/data
 cp -r .hide/tex $NAME/tex
 mkdir $NAME/jupyter
-python .hide/create_notebook.py $NAME/jupyter/$NAME
 cp .hide/Makefile $NAME/Makefile
+cp .hide/data.csv $NAME/data/data.csv
+ln -s /home/leonid/github.com/LeonidPilyugin/python-lab/src/lab $NAME/jupyter/lab
+cp .hide/default.ipynb $NAME/jupyter/$NAME.ipynb
