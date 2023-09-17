@@ -15,3 +15,21 @@ endsnippet
 snippet -- "~---" iA
 ~--- $0
 endsnippet
+
+snippet шт "table" bA
+\begin{table}[!ht]
+    \centering
+    \caption{$1}
+    \resizebox{\columnwidth}{!}{\input{$2.tex}}
+\end{table}
+$0
+endsnippet
+
+snippet та "table" bA
+\begin{table}[!ht]
+    \centering
+    \caption{$1}
+    \input{$2.tex}
+\end{table}
+$0
+endsnippet
