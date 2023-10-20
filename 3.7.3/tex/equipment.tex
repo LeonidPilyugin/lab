@@ -1,0 +1,197 @@
+\section{Результаты измерений}
+\begin{figure}[ht!]
+    \center{\includegraphics[width=0.8\linewidth]{../img/fig2.png}}
+\end{figure}
+\begin{figure}[ht!]
+    \center{\includegraphics[width=0.8\linewidth]{../img/fig3.png}}
+\end{figure}
+
+\begin{table}[!ht]
+    \centering
+    \caption{Резонансные частоты}
+    \input{resonance.tex}
+\end{table}
+
+Фазовая скорость
+\[
+    V_{\text{ф}} = 2\cdot 10^{8}\;\text{м} / \text{с}
+\]
+Дисперсия почти отсутствует.
+
+\begin{table}[!ht]
+    \centering
+    \caption{АЧХ}
+    \input{achh.tex}
+\end{table}
+
+\begin{table}[!ht]
+    \centering
+    \caption{ФЧХ}
+    \input{fchh.tex}
+\end{table}
+
+\begin{figure}[ht!]
+    \center{\includegraphics[width=0.8\linewidth]{../img/achh.png}}
+\end{figure}
+\begin{figure}[ht!]
+    \center{\includegraphics[width=0.8\linewidth]{../img/fchh.png}}
+\end{figure}
+
+
+Для описания характеричтик коаксиального кабеля уравнения удобно переписать следующим образом:
+\[
+    y_{1} = \frac{L_{x}C_{x}}{c^{2}}x^{1}
+\]
+\[
+    x_{1}=w^{2}
+\]
+\[
+    y_{1}=k(w)^{2}- \alpha (w)^{2}
+\]
+
+По наклону прямой можно определить $L_{x}C_{x}$, а зная волновое сопротивление кабеля,
+определить $L_{x}$ и $C_{x}$.
+
+\begin{figure}[ht!]
+    \center{\includegraphics[width=0.8\linewidth]{../img/line1.png}}
+\end{figure}
+\[
+    k_{1} = \left(2499894 \pm 2\right)\cdot 10^{-11}\;\text{МГц}^{-2}\cdot\text{м}^{-2}
+\]
+\[
+    L_{x} \approx 2{,}75\;\text{мкГн}/\text{м}
+\]
+\[
+    C_{x} \approx 0{,}1\;\text{нФ}/\text{м}
+\]
+
+
+Из этих величин и геометрических параметров можно найти $ \varepsilon$ и $ \mu$.
+
+\[
+    \mu \approx 1{,}18
+\]
+\[
+    \varepsilon \approx 1{,}9
+\]
+
+
+Удельную проводимость $ \sigma$ материала проводников можно определить двумя методами.
+
+\textbf{Метод А}
+
+\[
+    \alpha(w) = \frac{1}{l}\ln\left(\frac{U_{0}}{U_{\text{н}}}\right) = R_{x}C_{x}\frac{V_{\text{ф}}}{2}    
+\]
+Если взять удельную проводимость для меди и подставить в известное выражение для характерной толщины скин-слоя:
+\[
+    \delta = \frac{c}{2 \pi \sqrt{\nu\sigma}}
+\]
+то окажется, что даже при минимальной частоте $\nu=1\;\text{МГц}$  эта толщина будет равна около
+$65\;\text{мкм}$, что примерно в десять раз меньше радиуса центрального проводника.
+ При больших частотах характерная толщина скин-слоя ещё меньше. Поэтому для упрощения будем предполагать, что весь ток сосредоточен в приповерхностном слое и потери, связанные с джоулевым нагревом описываются следующим выражением:
+ \[
+     dN=\frac{(dU)^{2}}{dR}
+ \]
+ \[
+     dR=\frac{dx}{\sigma \pi d}\frac{2}{ \delta}
+ \]
+ Погонное сопротивление с учётом скин-эффекта можно определить следующим образом:
+ \[
+     R_{x} = \frac{2}{\sigma \pi d \delta} = \frac{4\sqrt{\nu}}{\sqrt{\sigma}cd}    
+ \]
+\[
+    \alpha(w) = \frac{4}{\sqrt{\sigma}d}C_{x}\frac{V_{\text{ф}}}{c}\sqrt{\nu}
+\]
+
+\[
+    y_{2} = \frac{4}{\sqrt{\sigma}d}C_{x}\frac{V_{\text{ф}}}{c}x_{2}
+\]
+\[
+    x_{2} = \sqrt{\nu}
+\]
+\[
+    y_{2} = \alpha(w)
+\]
+
+По наклону прямой можно определить $\sigma$
+\[
+    \sigma = \left(\frac{2C_{x}V_{\text{ф}}}{cd\left(\Delta y_{2}/ \Delta x_{2}\right)}\right)^{2}
+\]
+
+\begin{figure}[ht!]
+    \center{\includegraphics[width=0.8\linewidth]{../img/line2.png}}
+\end{figure}
+\[
+    k_{2} = \left(114 \pm 2\right)\cdot 10^{-5}\;\text{МГц}^{-0.5}\cdot\text{м}^{-1.0}
+\]
+\[
+    \sigma = \left(66 \pm 3\right)\cdot 10^{6}\;\text{См} / \text{м}
+\]
+
+
+\textbf{Метод Б}
+\[
+    2 \alpha k = wR_{x}C_{x}
+\]
+Зная амплитуду колебаний и сдвиг фазы в конце длинной линии относительно входного
+сигнала экспериментально можно определить как $ \alpha(w)$ так и $k(w)$
+\[
+    y_{3} = \frac{4 \pi C_{x}}{\sqrt{\sigma}dc}x_{3}
+\]
+\[
+    x_{3} = \nu^{3/2}
+\]
+\[
+    y_{3} = \alpha(w)k(w) = \frac{1}{l}\ln\left(\frac{U_{0}}{U_{\text{н}}}\right)\frac{ \Delta \varphi}{l}
+\]
+По наклону прямой
+\[
+    \sigma = \left(\frac{4 \pi C_{x}}{dc\left(\Delta y_{3}/ \Delta x_{3}\right)}\right)^{2}
+\]
+
+\begin{figure}[ht!]
+    \center{\includegraphics[width=0.8\linewidth]{../img/line3.png}}
+\end{figure}
+\[
+    k_{3} = \left(351 \pm 3\right)\cdot 10^{-7}\;\text{МГц}^{-1.5}\cdot\text{м}^{-2.0}
+\]
+\[
+    \sigma = \left(68{,}7 \pm 1{,}1\right)\cdot 10^{6}\;\text{См} / \text{м}
+\]
+
+
+Фазовая скорость связана с резонансной частотой формулой
+\[
+    V_{\text{ф}} = \frac{wl}{2 \pi n}
+\]
+
+\begin{figure}[ht!]
+    \center{\includegraphics[width=0.8\linewidth]{../img/shit.png}}
+\end{figure}
+\begin{table}[!ht]
+    \centering
+    \caption{Измерение фазы от амплитуды}
+    \input{shit.tex}
+\end{table}
+График получился линейным (первая и последняя точки лежат на прямой с точностью до $2\pi$), что
+соответствует формуле
+\[
+    k=\frac{\Delta\phi}{l}
+\]
+
+\begin{table}[!ht]
+    \centering
+    \caption{Резонансные частоты}
+    \input{r2.tex}
+\end{table}
+
+\begin{table}[!ht]
+    \centering
+    \caption{Распределение напряжений}
+    \input{us.tex}
+\end{table}
+\begin{figure}[ht!]
+    \center{\includegraphics[width=0.8\linewidth]{../img/us.png}}
+\end{figure}
+
