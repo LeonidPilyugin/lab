@@ -1,0 +1,1 @@
+/home/leonid/Documents/Phystech/общесос/лабы/lab/.hide/.vim
