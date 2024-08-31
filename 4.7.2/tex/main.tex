@@ -1,0 +1,37 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[english,russian]{babel}
+\usepackage[left=2cm, top=2cm, right=2cm, bottom=2.5cm]{geometry}
+\usepackage{indentfirst}
+\usepackage{enumitem}
+\usepackage[tableposition=top,singlelinecheck=false]{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{tabularx}
+
+\setlist{nosep}
+
+\DeclareCaptionLabelFormat{gostfigure}{\textbf{Рисунок #2}}
+\DeclareCaptionLabelFormat{gosttable}{\textbf{Таблица #2}}
+\DeclareCaptionLabelSeparator{gost}{.\;}
+\captionsetup{labelsep=gost}
+\captionsetup*[figure]{labelformat=gostfigure}
+\captionsetup*[table]{labelformat=gosttable}
+\renewcommand{\thesubfigure}{\asbuk{subfigure}}
+\makeatletter
+\newcommand*{\rom}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
+
+\DeclareMathOperator{\rot}{rot}
+
+\begin{document}
+    \input{titular.tex}
+    \input{annotation.tex}
+    \input{theory.tex}
+    \input{equipment.tex}
+    \input{data.tex}
+    \input{conclusion.tex}
+\end{document}

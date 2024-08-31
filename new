@@ -8,7 +8,5 @@ cp -r .hide/tex $NAME/tex
 mkdir $NAME/jupyter
 cp .hide/Makefile $NAME/Makefile
 cp .hide/data.csv $NAME/data/data.csv
-ln -s /home/leonid/github.com/LeonidPilyugin/python-lab/src/lab $NAME/jupyter/lab
-ln -s /home/leonid/Documents/Phystech/общесос/лабы/lab/.hide/.vim $NAME/.vim
-ln -s /home/leonid/Documents/Phystech/общесос/лабы/labnik.pdf $NAME/labnik.pdf
+ln -s "/home/leonid/Documents/Phystech/5 семестр/лабы/labnik.pdf" $NAME/labnik.pdf
 cp .hide/default.ipynb $NAME/jupyter/$NAME.ipynb

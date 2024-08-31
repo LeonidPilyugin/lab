@@ -1,0 +1,1 @@
+/home/leonid/Documents/Phystech/4 семестр/лабы/.hide/.vim
